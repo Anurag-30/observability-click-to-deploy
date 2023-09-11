@@ -1,0 +1,54 @@
+# Copyright 2022 Google LLC
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
+cloudbuild:
+  enable_parallel: false
+versions:
+- dir: 9/php8/debian9/9.4/apache
+  from: marketplace.gcr.io/google/php8-apache2:8.1
+  packages:
+    composer:
+      gpg: e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf
+      version: 2.2.8
+    drupal:
+      md5: 2dd8931d3a4eac19c777c85af41b88f9
+      version: 9.4.8
+  repo: drupal9-php8-apache
+  tags:
+  - 9.4.8-debian9
+  - 9.4-debian9
+  - 9-debian9
+  - 9.4.8
+  - '9.4'
+  - '9'
+  - latest
+- dir: 9/php8/debian9/9.3/apache
+  from: marketplace.gcr.io/google/php8-apache2:8.1
+  packages:
+    composer:
+      gpg: e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf
+      version: 2.2.8
+    drupal:
+      md5: d0efe1a8886e597c16eb8d4de6d25006
+      version: 9.3.22
+  repo: drupal9-php8-apache
+  tags:
+  - 9.3.22-debian9
+  - 9.3-debian9
+  - 9.3.22
+  - '9.3'
+
